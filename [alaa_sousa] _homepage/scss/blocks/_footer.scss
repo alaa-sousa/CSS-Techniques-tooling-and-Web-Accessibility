@@ -1,0 +1,9 @@
+@use '../utils/variables';
+@use '../utils/mixins';
+@use '../utils/utils';
+@use '../base/resets';
+@use '../base/base';
+.footer{
+    color: variables.$secondary-color;
+    padding-left: 50px;    
+}

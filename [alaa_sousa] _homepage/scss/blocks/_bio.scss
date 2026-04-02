@@ -1,0 +1,75 @@
+@use '../utils/variables';
+@use '../utils/mixins';
+@use '../utils/utils';
+@use '../base/resets';
+@use '../base/base';
+
+.bio{
+    color: variables.$text-color;
+    display: flex;
+    .background_img{
+        position: relative;
+        width: clamp(30vw , 100% , 100vw);
+    }
+    .avatar{
+        width: 18vw;
+        height: 30vh;
+        border-radius: 60%;
+        margin: 30px 0px 0px 10px;
+        position: absolute;
+    }
+    .bio_name{
+        position:absolute;
+        margin : 60px 0px 0px 300px;
+        font-size: 3rem;
+    }
+    .bio_description{
+        position: absolute;
+        margin: 120px 0px 0px 320px;
+        font-size: 1.5rem;
+    }
+}
+
+@include mixins.mobile {
+    .bio{
+        flex-direction: column;
+        align-items: center;
+        .background_img{
+            position: relative;
+        }
+        .avatar{
+            position: absolute;
+            width: 15vw;
+            height: 15vh;
+            margin: 5px 0px;
+        }
+        .bio_name{
+            position: absolute;
+            margin : 105px 0px;
+            font-size: 1.5rem;
+        }
+        .bio_description{
+            position: absolute;
+            margin: 130px 0px;
+            font-size: 1rem;
+        }
+    }
+}
+
+@include mixins.tablet {
+    .bio{
+        .avatar{
+            width: 15vw;
+            height: 20vh;
+            margin: 30px 0px 0px 10px;}
+        .bio_name{
+            font-size: 2rem;
+            margin-left: 180px;
+        }
+        .bio_description{
+            font-size: 1.2rem;
+            margin: 100px 0px 0px 190px;
+        }
+    }
+}
+
