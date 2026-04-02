@@ -1,0 +1,18 @@
+@use '../utils/utils';
+@use '../utils/variables';
+@use '../utils/mixins';
+@use '../base/resets';
+@use '../base/base';
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    border-radius: 2px;
+    background-color: variables.$primary-color;
+    .header_link{
+        color: variables.$text-color;
+        text-decoration: none;
+        font-size: 1.3rem;
+    }
+}

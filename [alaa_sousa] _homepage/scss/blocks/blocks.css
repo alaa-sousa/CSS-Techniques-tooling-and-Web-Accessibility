@@ -1,0 +1,211 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  border-radius: 2px;
+  background-color: #000;
+}
+.header .header_link {
+  color: rgb(0, 247, 255);
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+.footer {
+  color: rgba(0, 0, 0, 0.5333333333);
+  padding-left: 50px;
+}
+
+.bio {
+  color: rgb(0, 247, 255);
+  display: flex;
+}
+.bio .background_img {
+  position: relative;
+  width: clamp(30vw, 100%, 100vw);
+}
+.bio .avatar {
+  width: 18vw;
+  height: 30vh;
+  border-radius: 60%;
+  margin: 30px 0px 0px 10px;
+  position: absolute;
+}
+.bio .bio_name {
+  position: absolute;
+  margin: 60px 0px 0px 300px;
+  font-size: 3rem;
+}
+.bio .bio_description {
+  position: absolute;
+  margin: 120px 0px 0px 320px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .bio {
+    flex-direction: column;
+    align-items: center;
+  }
+  .bio .background_img {
+    position: relative;
+  }
+  .bio .avatar {
+    position: absolute;
+    width: 15vw;
+    height: 15vh;
+    margin: 5px 0px;
+  }
+  .bio .bio_name {
+    position: absolute;
+    margin: 105px 0px;
+    font-size: 1.5rem;
+  }
+  .bio .bio_description {
+    position: absolute;
+    margin: 130px 0px;
+    font-size: 1rem;
+  }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+  .bio .avatar {
+    width: 15vw;
+    height: 20vh;
+    margin: 30px 0px 0px 10px;
+  }
+  .bio .bio_name {
+    font-size: 2rem;
+    margin-left: 180px;
+  }
+  .bio .bio_description {
+    font-size: 1.2rem;
+    margin: 100px 0px 0px 190px;
+  }
+}
+.latest-projects {
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  color: rgb(0, 247, 255);
+  width: clamp(25vw, 100%, 100vw);
+  padding: 0px 20px 0px 0px;
+}
+.latest-projects_title {
+  font-size: 2.5rem;
+  margin: 20px 0px 20px 10px;
+}
+.latest-projects_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-left: 30px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+.latest-projects .project-card_image {
+  width: 100%;
+  height: 40vh;
+  padding: 0px 30px 0px 0px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.latest-projects .project-card_title {
+  font-size: 1.3rem;
+  text-align: center;
+  margin: 10px 10px 0px 0px;
+}
+.latest-projects .project-card_description {
+  text-align: center;
+  margin: 10px 10px 0px 0px;
+}
+
+.project__button {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px 0px 0px;
+}
+
+.button {
+  font-size: 0.7rem;
+  color: rgb(0, 247, 255);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+.button:active {
+  transform: scale(0.95);
+}
+
+.project-card {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+  border-radius: 12px;
+  padding: 20px 0px 0px 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease forwards;
+}
+.project-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 768px) {
+  .latest-projects_title {
+    text-align: center;
+  }
+  .latest-projects_container {
+    grid-template-columns: repeat(1, 1fr);
+    margin: 0px 0px 0px 20px;
+  }
+  .project-card_image {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+  .project-card_image {
+    width: 100%;
+    height: auto;
+    padding: 0px 20px 0px 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}/*# sourceMappingURL=blocks.css.map */
